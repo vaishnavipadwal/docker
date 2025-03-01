@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        nav {
+            background: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        code {
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Docker Overview
+    </header>
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#docker-image">Docker Image</a>
+        <a href="#docker-container">Docker Container</a>
+        <a href="#commands">Commands</a>
+    </nav>
+    <div class="container">
+        <h2 id="overview">What is Docker?</h2>
+        <p>Docker is a platform that enables developers to build, deploy, and run applications inside lightweight containers. It helps in creating a consistent development and production environment by packaging applications and their dependencies together.</p>
+        
+        <h2 id="docker-image">What is a Docker Image?</h2>
+        <p>A Docker image is a **lightweight, standalone, and executable package** that includes everything needed to run a piece of software, such as the code, runtime, libraries, and dependencies.</p>
+        <p>Images are read-only templates used to create Docker containers.</p>
+        
+        <h3>Commands to Manage Docker Images:</h3>
+        <ul>
+            <li><code>docker images</code> - List all Docker images</li>
+            <li><code>docker pull &lt;image_name&gt;</code> - Download an image from Docker Hub</li>
+            <li><code>docker rmi &lt;image_id&gt;</code> - Remove an image</li>
+        </ul>
+        
+        <h2 id="docker-container">What is a Docker Container?</h2>
+        <p>A Docker container is a **running instance** of a Docker image. It is an isolated environment where applications run.</p>
+        <p>Containers ensure that applications run in the same way across different environments.</p>
+        
+        <h3>Commands to Manage Docker Containers:</h3>
+        <ul>
+            <li><code>docker ps</code> - List running containers</li>
+            <li><code>docker ps -a</code> - List all containers (including stopped ones)</li>
+            <li><code>docker run -d --name &lt;container_name&gt; &lt;image_name&gt;</code> - Run a container in detached mode</li>
+            <li><code>docker stop &lt;container_id&gt;</code> - Stop a running container</li>
+            <li><code>docker rm &lt;container_id&gt;</code> - Remove a stopped container</li>
+        </ul>
+        
+        <h2 id="commands">Essential Docker Commands</h2>
+        <ul>
+            <li><code>docker --version</code> - Check Docker version</li>
+            <li><code>docker build -t &lt;image_name&gt; .</code> - Build an image from a Dockerfile</li>
+            <li><code>docker exec -it &lt;container_id&gt; bash</code> - Access a running container's shell</li>
+            <li><code>docker logs &lt;container_id&gt;</code> - View logs of a container</li>
+            <li><code>docker-compose up</code> - Start multiple containers using Docker Compose</li>
+        </ul>
+    </div>
+</body>
+</html>
