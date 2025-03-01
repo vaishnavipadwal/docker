@@ -41,27 +41,27 @@ Starts the Apache web server when the container runs.
   
 ## Now add commit and push that file in Remote Repository
 
-## Noe take ssh of an instance on cloud shell and go with root user
+## Take ssh of an instance on cloud shell and go with root user
 ```
 ssh -i <key-name> <usr-name>@<pub-IP>
 sudo -i
 ```
-## Now clone Remote repository on that instance and go in that repositorie's-directory
+## Clone Remote repository on that instance and go in that repositorie's-directory
 ```
 git clone <url>
 cd <dir-name>
 ```
-### Build docker image using docker file 
+## Build docker image using docker file 
 ```
 docker build -t <img-name>:<tag> .
 ```
-### check docker image
+## check docker image
 ```
 docker images
 ```
 
-### create container using builed image by docker file 
+## create container using builed image by docker file 
 ```
 docker run -d -p <port-no> --name <name> <img-name>:<tag>
 ```
-### Ans its done check with public-IP of instance with port number on browser
+## Ans its done check with public-IP of instance with port number on browser
