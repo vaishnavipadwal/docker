@@ -1,0 +1,12 @@
+FROM ubuntu:20.04
+ENV DEBIAN_FRONTEND=noninteractive
+ENV CATALINA_HOME=/usr/local/tomcat
+ENV PATH=$CATALINA_HOME/bin:$PATH
+RUN apt-get update && apt-get install -y openjdk-11-jdk wget && apt-get clean
+RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.85/bin/apache-tomcat-9.0.85.tar.gz \
+    && tar xvf apache-tomcat-9.0.85.tar.gz \
+    && mv apache-tomcat-9.0.85 /usr/local/tomcat \
+    && rm apache-tomcat-9.0.85.tar.gz
+COPY ./index2.html /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
