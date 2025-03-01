@@ -67,10 +67,24 @@ A monolithic application is a single, unified codebase where all components are 
 In contrast, a microservices application is built as multiple independent services, each handling a specific function and communicating via APIs. This allows teams to develop, deploy, and scale services separately, making it more flexible and scalable but also more complex to manage.
 While monolithic architectures are suitable for small applications due to their simplicity, microservices are better for large-scale applications that require scalability, flexibility, and fault isolation.
 
+## Build image from Dockerfile 
+A Dockerfile is a text file that contains a set of instructions to automate the creation of a Docker image. It defines the environment and dependencies required for an application to run inside a Docker container.
+
+### Commands for build Docker image by Dockerfile
+- Build image
+```
+docker build -t <img-name>:<tag> .
+```
+- run or create container
+```
+docker run -d -p <port>:<port> <img-name>:<tag>
+```
+- check on instance IP with port number
+
 ## DockerHub
 Docker Hub is an online repository for container images, allowing developers to store, share, and manage Docker images easily. It serves as the default registry for Docker, where users can pull prebuilt images or push their own custom images
 
-## command related to DockerHub
+### command related to DockerHub
 - To pull image from docker hub
 ```
 docker pull nginx
