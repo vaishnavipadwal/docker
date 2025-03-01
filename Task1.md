@@ -15,14 +15,20 @@ CMD [ "apache2ctl", "-DFOREGROUND"]
 ```
 ### Explanation of Docker file 
 FROM ubuntu:20.04: This sets the base image to ubuntu:20.04. It means the container will be built on top of Ubuntu 20.04.
+
 RUN apt-get update: Updates the package list in the container. Ensures that we get the latest versions of packages.
+
 ENV DEBIAN_FRONTEND=noninteractive: Prevents interactive prompts during package installation. Useful when running commands in an automated script.
+
 RUN apt-get install apache2 -y: Installs Apache2 web server. The -y flag automatically confirms the installation.
+
 RUN apt install -y apache2-utils: Installs additional Apache utilities, such as htpasswd for authentication.
+
 RUN apt clean: Cleans up cached files to reduce image size. This helps keep the container lightweight.
+
 COPY ./index.html /var/www/html/index.html: Copies the local index.html file into the container. Places it in the default Apache web server directory (/var/www/html/).
-CMD [ "apache2ctl", "-DFOREGROUND"]: This is the default command that runs when the container starts.
-apache2ctl -DFOREGROUND keeps Apache running in the foreground so the container doesn’t exit immediately.
+
+CMD [ "apache2ctl", "-DFOREGROUND"]: This is the default command that runs when the container starts. apache2ctl -DFOREGROUND keeps Apache running in the foreground so the container doesn’t exit immediately.
 
 ### What This Dockerfile Does:
 Creates a Docker container with Ubuntu 20.04.
