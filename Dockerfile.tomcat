@@ -1,12 +1,36 @@
+# FROM ubuntu:20.04
+# ENV DEBIAN_FRONTEND=noninteractive
+# ENV CATALINA_HOME=/usr/local/tomcat
+# ENV PATH=$CATALINA_HOME/bin:$PATH
+# RUN apt-get update && apt-get install -y openjdk-11-jdk wget && apt-get clean
+# RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.85/bin/apache-tomcat-9.0.85.tar.gz \
+#     && tar xvf apache-tomcat-9.0.85.tar.gz \
+#     && mv apache-tomcat-9.0.85 /usr/local/tomcat \
+#     && rm apache-tomcat-9.0.85.tar.gz
+# COPY ./index2.html /usr/local/tomcat/webapps/ROOT.war
+# EXPOSE 8080
+# CMD ["catalina.sh", "run"]
+
 FROM ubuntu:20.04
-ENV DEBIAN_FRONTEND=noninteractive
-ENV CATALINA_HOME=/usr/local/tomcat
-ENV PATH=$CATALINA_HOME/bin:$PATH
+
+# Install dependencies
 RUN apt-get update && apt-get install -y openjdk-11-jdk wget && apt-get clean
-RUN wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.85/bin/apache-tomcat-9.0.85.tar.gz \
-    && tar xvf apache-tomcat-9.0.85.tar.gz \
-    && mv apache-tomcat-9.0.85 /usr/local/tomcat \
-    && rm apache-tomcat-9.0.85.tar.gz
-COPY ./index2.html /usr/local/tomcat/webapps/ROOT.war
+
+# Define Tomcat version
+ENV TOMCAT_VERSION 9.0.87
+ENV TOMCAT_HOME /usr/local/tomcat
+
+# Download and install Tomcat (Using Apache official mirror)
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v${TOMCAT_VERSION}/bin/apache-tomcat-${TOMCAT_VERSION}.tar.gz \
+    && tar xvf apache-tomcat-${TOMCAT_VERSION}.tar.gz \
+    && mv apache-tomcat-${TOMCAT_VERSION} ${TOMCAT_HOME} \
+    && rm apache-tomcat-${TOMCAT_VERSION}.tar.gz
+
+# Copy website files
+COPY ./index2.html ${TOMCAT_HOME}/webapps/ROOT/index.html
+
+# Expose Tomcat default port
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
+
+# Start Tomcat
+CMD ["sh", "/usr/local/tomcat/bin/catalina.sh", "run"]
