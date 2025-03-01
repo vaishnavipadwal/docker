@@ -55,13 +55,13 @@ cd <dir-name>
 ```
 docker build -t <img-name>:<tag> .
 ```
-## check docker image
+## Check docker image
 ```
 docker images
 ```
 
-## create container using builed image by docker file 
+## Create container using builed image by docker file 
 ```
 docker run -d -p <port-no> --name <name> <img-name>:<tag>
 ```
-## Ans its done check with public-IP of instance with port number on browser
+## And its done check with public-IP of instance with port number on browser
