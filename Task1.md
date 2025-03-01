@@ -1,6 +1,6 @@
 # Documentation - Task 1
 
-## Task 1: Create AMI OR Docker image using docker file which include apache2 installation and deploy small webstite
+## Task 1: Create Docker image using docker file which include apache2 installation and deploy small webstite
 
 ## Create Dockerfile:
 ```
