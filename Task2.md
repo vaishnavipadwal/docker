@@ -1,7 +1,7 @@
 # Documentation Task2:
 
 ## Create Dockerfile 
-- I already have 1 Dockerfile so i do another as Dockerfile.tomcat
+- I already have 1 Dockerfile, So I did another as Dockerfile.tomcat
 ```
 FROM ubuntu:20.04
 RUN apt-get update && apt-get install -y openjdk-11-jdk wget && apt-get clean
