@@ -1,5 +1,5 @@
 # Docker
----
+
 ## What is Docker
 Docker is a containerization platform that enables developers to package applications and their dependencies into lightweight, portable containers. Containers ensure that applications run consistently across different computing environments, whether it's a developer's laptop, a test server, or a production cloud environment.
 
