@@ -76,4 +76,3 @@ docker run -d -p 8080:8080 --name <name-container> <img-name>:<tag>
 ```
 ## And its Done 
 - check with instance Ip with port number.
-- 
