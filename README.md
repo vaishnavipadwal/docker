@@ -66,3 +66,21 @@ docker inspect <container_id>             # Get detailed container info
 A monolithic application is a single, unified codebase where all components are tightly coupled and deployed as one unit. This makes it simpler to develop but harder to scale because any update requires redeploying the entire application. A failure in one part can bring down the whole system.
 In contrast, a microservices application is built as multiple independent services, each handling a specific function and communicating via APIs. This allows teams to develop, deploy, and scale services separately, making it more flexible and scalable but also more complex to manage.
 While monolithic architectures are suitable for small applications due to their simplicity, microservices are better for large-scale applications that require scalability, flexibility, and fault isolation.
+
+## DockerHub
+Docker Hub is an online repository for container images, allowing developers to store, share, and manage Docker images easily. It serves as the default registry for Docker, where users can pull prebuilt images or push their own custom images
+
+## command related to DockerHub
+- To pull image from docker hub
+```
+docker pull nginx
+```
+- To push image to docker hub
+```
+docker tag <local-img-name>:<tag/imgname> <dock-hub-id>/<repo-name>:<tag/imgname>
+docker push <dock-hub-id>/<repo-name>:<tag/imgname>
+```
+- search for an image
+```
+docker search ubuntu
+```
