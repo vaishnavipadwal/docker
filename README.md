@@ -98,3 +98,13 @@ docker push <dock-hub-id>/<repo-name>:<tag/imgname>
 ```
 docker search ubuntu
 ```
+Installation for minikube
+```
+curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+```
+
+Installtion for kubectl
+```
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.32.0/2024-12-20/bin/linux/amd64/kubectl
+```
