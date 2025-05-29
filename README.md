@@ -9,6 +9,18 @@ Containerization is a technology that allows applications to be packaged along w
 ## Virtualization
 Virtualization is the process of creating a virtual version of computing resources, such as servers, storage, networks, or operating systems, instead of using physical hardware. It allows multiple virtual machines (VMs) to run on a single physical machine, improving efficiency and resource utilization.
 
+## Disadvantages of virtualization
+1. **Performance Overhead**: Virtual machines (VMs) may have slower performance compared to physical machines due to sharing of CPU, memory, and storage resources.
+2. **High Initial Setup Cost**: Although virtualization saves costs in the long run, the initial setup requires investment in powerful hardware, virtualization software, and skilled professionals.
+3. **Security Risks**: If a hypervisor or host is compromised, all the guest VMs can be affected. Shared resources may lead to **security vulnerabilities** like VM escape.
+4. **Resource Contention**: Multiple VMs running on a single host can compete for resources, which may lead to performance degradation if not managed properly.
+5. **Complex Management**: Managing a virtual environment, especially large-scale deployments, can be complex and requires **specialized knowledge** and tools.
+6. **Licensing Issues**: Some software used within virtual machines may require separate licenses, increasing **licensing complexity and cost**.
+7. **Limited Hardware Support**: Certain hardware-dependent applications or drivers may not function correctly in a virtual environment.
+8. **Backup and Recovery Challenges**: While backup is possible, restoring a corrupted VM or recovering a full environment can be **time-consuming and require large storage**.
+9. **Not Ideal for All Workloads**: Applications that require **high processing power or real-time performance** (e.g., high-end graphics rendering, low-latency trading systems) may not perform well in a virtualized setup.
+10. **Downtime Risks with Host Failure**: If the physical host fails, **all VMs on that host go down**, potentially affecting multiple services at once.
+
 ## Difference between virtualization and containerization
 Virtualization uses a hypervisor to create multiple virtual machines (VMs), each with its own full OS (Windows, Linux, etc.). This makes VMs heavier, as each OS consumes RAM, CPU, and storage separately. The isolation is stronger but comes with performance overhead. while,
 Containerization runs multiple containers on a shared OS kernel. Instead of duplicating entire operating systems, containers only package the application and its dependencies, making them lighter, faster, and more efficient than VMs. However, they have weaker isolation since they rely on the same OS.
