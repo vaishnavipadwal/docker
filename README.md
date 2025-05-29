@@ -13,7 +13,7 @@ Virtualization is the process of creating a virtual version of computing resourc
 Virtualization uses a hypervisor to create multiple virtual machines (VMs), each with its own full OS (Windows, Linux, etc.). This makes VMs heavier, as each OS consumes RAM, CPU, and storage separately. The isolation is stronger but comes with performance overhead. while,
 Containerization runs multiple containers on a shared OS kernel. Instead of duplicating entire operating systems, containers only package the application and its dependencies, making them lighter, faster, and more efficient than VMs. However, they have weaker isolation since they rely on the same OS.
 
-![architecutere of containerization and virtulization](cont vs virtu.webp)
+![con-vs-virtu.png](cont vs virtu.webp)
 ## Hypervisor 
 A hypervisor is software or firmware that allows multiple virtual machines (VMs) to run on a single physical machine by managing and allocating hardware resources like CPU, memory, and storage. It enables virtualization by creating and running isolated virtual environments on the same system
 
