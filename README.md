@@ -64,6 +64,7 @@ docker inspect <container_id>             # Get detailed container info
 
 ## Monolithic vs. Microservices 
 A monolithic application is a single, unified codebase where all components are tightly coupled and deployed as one unit. This makes it simpler to develop but harder to scale because any update requires redeploying the entire application. A failure in one part can bring down the whole system.
+
 In contrast, a microservices application is built as multiple independent services, each handling a specific function and communicating via APIs. This allows teams to develop, deploy, and scale services separately, making it more flexible and scalable but also more complex to manage.
 While monolithic architectures are suitable for small applications due to their simplicity, microservices are better for large-scale applications that require scalability, flexibility, and fault isolation.
 
