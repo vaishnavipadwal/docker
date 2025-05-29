@@ -17,6 +17,24 @@ Containerization runs multiple containers on a shared OS kernel. Instead of dupl
 ## Hypervisor 
 A hypervisor is software or firmware that allows multiple virtual machines (VMs) to run on a single physical machine by managing and allocating hardware resources like CPU, memory, and storage. It enables virtualization by creating and running isolated virtual environments on the same system
 
+### Types of hypervisor
+
+### 1. **Type 1 Hypervisor (Bare-metal Hypervisor)**
+it Installed directly on the physical hardware and it does not require a host operating system. It manages guest operating systems directly through the hardware. and it aslo offers better performance and efficiency . it is commonly used in enterprise environments and data centers.
+**Examples**:
+* VMware ESXi
+* Microsoft Hyper-V (in server mode)
+* Xen
+* KVM (Kernel-based Virtual Machine, often used with Linux)
+
+### 2. **Type 2 Hypervisor (Hosted Hypervisor)**
+It installed on top of a host operating system. It relies on the host OS for device support and management. It Easier to set up, suitable for personal or development use. it slightly lower performance compared to Type 1 due to an extra OS layer.
+**Examples**:
+* Oracle VirtualBox
+* VMware Workstation
+* VMware Player
+* Parallels Desktop (for macOS)
+
 ## Installation of Docker in unbuntu machine 
 ```
 # Add Docker's official GPG key:
